@@ -4,8 +4,62 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "620010b4a6c5f00f26dd7a5230eff84d",
+    "content-hash": "2e3f4b40249a173827f72f99cb0c5ba4",
     "packages": [
+        {
+            "name": "abraham/twitteroauth",
+            "version": "0.6.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/abraham/twitteroauth.git",
+                "reference": "fc0766220c79087ac8178625d34e88ca29160d5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/fc0766220c79087ac8178625d34e88ca29160d5b",
+                "reference": "fc0766220c79087ac8178625d34e88ca29160d5b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "2.3.*",
+                "phpunit/phpunit": "4.8.*",
+                "squizlabs/php_codesniffer": "2.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Abraham\\TwitterOAuth\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abraham Williams",
+                    "email": "abraham@abrah.am",
+                    "homepage": "https://abrah.am",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The most popular PHP library for use with the Twitter OAuth REST API.",
+            "homepage": "https://twitteroauth.com",
+            "keywords": [
+                "Twitter API",
+                "Twitter oAuth",
+                "api",
+                "oauth",
+                "rest",
+                "social",
+                "twitter"
+            ],
+            "time": "2016-10-10T14:20:30+00:00"
+        },
         {
             "name": "composer/ca-bundle",
             "version": "1.0.8",
@@ -987,6 +1041,141 @@
                 "sql"
             ],
             "time": "2014-01-12T16:20:24+00:00"
+        },
+        {
+            "name": "knplabs/knp-components",
+            "version": "1.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/knp-components.git",
+                "reference": "a03bbd87ecf9e56db6f7533db2c63d6da6cd5f33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/knp-components/zipball/a03bbd87ecf9e56db6f7533db2c63d6da6cd5f33",
+                "reference": "a03bbd87ecf9e56db6f7533db2c63d6da6cd5f33",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "doctrine/mongodb-odm": "~1.0@beta",
+                "doctrine/orm": "~2.4",
+                "doctrine/phpcr-odm": "~1.2",
+                "jackalope/jackalope-doctrine-dbal": "~1.2",
+                "phpunit/phpunit": "~4.2",
+                "ruflin/elastica": "~1.0",
+                "symfony/event-dispatcher": "~2.5",
+                "symfony/property-access": ">=2.3"
+            },
+            "suggest": {
+                "doctrine/common": "to allow usage pagination with Doctrine ArrayCollection",
+                "doctrine/mongodb-odm": "to allow usage pagination with Doctrine ODM MongoDB",
+                "doctrine/orm": "to allow usage pagination with Doctrine ORM",
+                "doctrine/phpcr-odm": "to allow usage pagination with Doctrine ODM PHPCR",
+                "propel/propel1": "to allow usage pagination with Propel ORM",
+                "ruflin/Elastica": "to allow usage pagination with ElasticSearch Client",
+                "solarium/solarium": "to allow usage pagination with Solarium Client",
+                "symfony/property-access": "To allow sorting arrays"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Knp\\Component": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/knp-components/contributors"
+                }
+            ],
+            "description": "Knplabs component library",
+            "homepage": "http://github.com/KnpLabs/knp-components",
+            "keywords": [
+                "components",
+                "knp",
+                "knplabs",
+                "pager",
+                "paginator"
+            ],
+            "time": "2017-09-15T12:50:01+00:00"
+        },
+        {
+            "name": "knplabs/knp-paginator-bundle",
+            "version": "v2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpPaginatorBundle.git",
+                "reference": "293abb6a2f1ae53ace5796d0ef3e5ae1b8f92371"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/293abb6a2f1ae53ace5796d0ef3e5ae1b8f92371",
+                "reference": "293abb6a2f1ae53ace5796d0ef3e5ae1b8f92371",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/knp-components": "~1.2",
+                "php": ">=5.3.3",
+                "symfony/framework-bundle": "~2.7|~3.0",
+                "twig/twig": "~1.12|~2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8",
+                "symfony/expression-language": "~2.7|~3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Knp\\Bundle\\PaginatorBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony2 Community",
+                    "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle/contributors"
+                }
+            ],
+            "description": "Paginator bundle for Symfony2 to automate pagination and simplify sorting and other features",
+            "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle",
+            "keywords": [
+                "Symfony2",
+                "bundle",
+                "knp",
+                "knplabs",
+                "pager",
+                "pagination",
+                "paginator"
+            ],
+            "time": "2017-06-09T15:25:39+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2250,6 +2439,281 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "friendsofsymfony/user-bundle",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
+                "reference": "4f92bfbb8742ac8cc195d0b34bf8ecd83b62404a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/4f92bfbb8742ac8cc195d0b34bf8ecd83b62404a",
+                "reference": "4f92bfbb8742ac8cc195d0b34bf8ecd83b62404a",
+                "shasum": ""
+            },
+            "require": {
+                "paragonie/random_compat": "^1 || ^2",
+                "php": "^5.5.9 || ^7.0",
+                "symfony/form": "^2.7 || ^3.0",
+                "symfony/framework-bundle": "^2.7 || ^3.0",
+                "symfony/security-bundle": "^2.7 || ^3.0",
+                "symfony/templating": "^2.7 || ^3.0",
+                "symfony/twig-bundle": "^2.7 || ^3.0",
+                "twig/twig": "^1.28 || ^2.0"
+            },
+            "conflict": {
+                "doctrine/doctrine-bundle": "<1.3",
+                "symfony/doctrine-bridge": "<2.7"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "^1.3",
+                "friendsofphp/php-cs-fixer": "^1.11",
+                "phpunit/phpunit": "~4.8|~5.0",
+                "swiftmailer/swiftmailer": "^4.3 || ^5.0 || ^6.0",
+                "symfony/console": "^2.7 || ^3.0",
+                "symfony/phpunit-bridge": "^2.7 || ^3.0",
+                "symfony/validator": "^2.7 || ^3.0",
+                "symfony/yaml": "^2.7 || ^3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FOS\\UserBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Coevoet",
+                    "email": "stof@notk.org"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSUserBundle/contributors"
+                },
+                {
+                    "name": "Thibault Duplessis",
+                    "email": "thibault.duplessis@gmail.com"
+                }
+            ],
+            "description": "Symfony FOSUserBundle",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "User management"
+            ],
+            "time": "2017-05-31T11:50:14+00:00"
+        },
+        {
+            "name": "hwi/oauth-bundle",
+            "version": "0.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hwi/HWIOAuthBundle.git",
+                "reference": "50f4bcbe5c217cfdf0f7f40a174b87199b76d1e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hwi/HWIOAuthBundle/zipball/50f4bcbe5c217cfdf0f7f40a174b87199b76d1e1",
+                "reference": "50f4bcbe5c217cfdf0f7f40a174b87199b76d1e1",
+                "shasum": ""
+            },
+            "require": {
+                "kriswallsmith/buzz": "~0.13",
+                "php": "^5.3.3|^7.0",
+                "symfony/form": "^2.3|^3.0",
+                "symfony/framework-bundle": "^2.3|^3.0",
+                "symfony/options-resolver": "^2.3|^3.0",
+                "symfony/security-bundle": "^2.3|^3.0",
+                "symfony/templating": "^2.7|^3.0",
+                "symfony/yaml": "^2.3|^3.0"
+            },
+            "conflict": {
+                "twig/twig": "<1.12"
+            },
+            "require-dev": {
+                "doctrine/orm": "^2.3",
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "friendsofsymfony/user-bundle": "^1.3|^2.0",
+                "phpunit/phpunit": "^4.8|^5.0",
+                "symfony/phpunit-bridge": "^2.7|^3.0",
+                "symfony/property-access": "^2.3|^3.0",
+                "symfony/stopwatch": "^2.5|^3.0",
+                "symfony/twig-bundle": "^2.3|^3.0",
+                "symfony/validator": "^2.3|^3.0"
+            },
+            "suggest": {
+                "doctrine/doctrine-bundle": "to use Doctrine user provider",
+                "friendsofsymfony/user-bundle": "to connect FOSUB with this bundle",
+                "symfony/property-access": "to use FOSUB integration with this bundle",
+                "symfony/twig-bundle": "to use the Twig hwi_oauth_* functions"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "HWI\\Bundle\\OAuthBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/hwi/HWIOAuthBundle/contributors"
+                },
+                {
+                    "name": "Joseph Bielawski",
+                    "email": "stloyd@gmail.com"
+                },
+                {
+                    "name": "Alexander",
+                    "email": "iam.asm89@gmail.com"
+                },
+                {
+                    "name": "Geoffrey Bachelet",
+                    "email": "geoffrey.bachelet@gmail.com"
+                }
+            ],
+            "description": "Support for authenticating users using both OAuth1.0a and OAuth2 in Symfony2.",
+            "homepage": "http://github.com/hwi/HWIOAuthBundle",
+            "keywords": [
+                "37signals",
+                "Authentication",
+                "Deezer",
+                "EVE Online",
+                "amazon",
+                "asana",
+                "auth0",
+                "azure",
+                "bitbucket",
+                "bitly",
+                "box",
+                "bufferapp",
+                "clever",
+                "dailymotion",
+                "deviantart",
+                "discogs",
+                "disqus",
+                "dropbox",
+                "eventbrite",
+                "facebook",
+                "firewall",
+                "fiware",
+                "flickr",
+                "foursquare",
+                "github",
+                "google",
+                "hubic",
+                "instagram",
+                "jawbone",
+                "jira",
+                "linkedin",
+                "mail.ru",
+                "oauth",
+                "oauth1",
+                "oauth2",
+                "odnoklassniki",
+                "paypal",
+                "qq",
+                "reddit",
+                "runkeeper",
+                "salesforce",
+                "security",
+                "sensio connect",
+                "sina weibo",
+                "slack",
+                "sound cloud",
+                "spotify",
+                "stack exchange",
+                "stereomood",
+                "strava",
+                "toshl",
+                "trakt",
+                "trello",
+                "twitch",
+                "twitter",
+                "vkontakte",
+                "wechat",
+                "windows live",
+                "wordpress",
+                "wunderlist",
+                "xing",
+                "yahoo",
+                "yandex",
+                "youtube"
+            ],
+            "time": "2017-01-08T14:13:58+00:00"
+        },
+        {
+            "name": "kriswallsmith/buzz",
+            "version": "v0.15.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kriswallsmith/Buzz.git",
+                "reference": "d59932b335c2f2f3ec9eee66a37db6bd50d39e13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kriswallsmith/Buzz/zipball/d59932b335c2f2f3ec9eee66a37db6bd50d39e13",
+                "reference": "d59932b335c2f2f3ec9eee66a37db6bd50d39e13",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^3.3"
+            },
+            "suggest": {
+                "ext-curl": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Buzz\\": "lib/Buzz"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com",
+                    "homepage": "http://kriswallsmith.net/"
+                }
+            ],
+            "description": "Lightweight HTTP client",
+            "homepage": "https://github.com/kriswallsmith/Buzz",
+            "keywords": [
+                "curl",
+                "http client"
+            ],
+            "time": "2017-08-19T09:43:47+00:00"
+        },
         {
             "name": "sensio/generator-bundle",
             "version": "v3.1.6",

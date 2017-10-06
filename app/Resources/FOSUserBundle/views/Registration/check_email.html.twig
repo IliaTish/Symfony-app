@@ -1,0 +1,9 @@
+{% extends "::base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<div class="container middle"><div class="modal-confirm"><div class="header-confirm"><h1>Registration success!</h1></div><h3>User was successfuly sign up.</h3><br><h3>{{ 'registration.check_email'|trans({'%email%': user.email}) }}</h3><br>
+        <h3><a href="{{ path("fos_user_security_login") }}">Back to main page</a></h3>
+    </div></div>
+{% endblock fos_user_content %}

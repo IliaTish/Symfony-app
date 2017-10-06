@@ -3,6 +3,8 @@
 parameters:
     #parameter_name: value
 
+
+
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -28,6 +30,17 @@ services:
         resource: '../../src/AppBundle/Controller'
         public: true
         tags: ['controller.service_arguments']
+
+    oauth_service:
+      class: AppBundle\Service\OAuthService
+      arguments: ["@session","@service_container"]
+      public: true
+
+
+    online_service:
+        class: AppBundle\Service\OnlineService
+        arguments: ["@security.token_storage","@service_container"]
+        public: true
 
     # add more services, or override services that need manual wiring
     # AppBundle\Service\ExampleService:

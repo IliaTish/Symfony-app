@@ -1,0 +1,54 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends "::base.html.twig" %}
+{% form_theme form 'Form/form_errors.html.twig' %}
+
+{% block fos_user_content %}
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+        <h4 class="modal-title">Ready to Join? Create a New Account</h4>
+    </div>
+    <form action="{{ path('fos_user_registration_register') }}" method="POST">
+        <div class="form-group" id="fos_user_registration_form">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>{{ 'form.email'|trans }}:</label>
+                    {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'Insert email'} }) }}
+                    {{ form_errors(form.email, {'attr': {'class':'register-error'}}) }}
+                    <div class="help-block">Your email address is also used to log in, and verification</div>
+                </div>
+            <div class="form-group">
+                <label>{{ 'form.username'|trans }}:</label>
+                {{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'insert Username'} }) }}
+                {{ form_errors(form.username, {'attr': {'class':'register-error'}}) }}
+                <div class="help-block">Type username, that's help you to log in</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>{{ 'form.password'|trans }}:</label>
+                        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder': 'Insert password'} }) }}
+                        {{ form_errors(form.plainPassword.first, {'attr': {'class':'register-error'}}) }}
+                        <div class="help-block">Choose a password for your new account.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>{{ 'form.password_confirmation'|trans }}:</label>
+                        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder': 'Confirm password'} }) }}
+                        {{ form_errors(form.plainPassword.second, {'attr': {'class':'register-error'}}) }}
+                        <div class="help-block">Type the password again. Passwords must match.</div>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+            </div>
+            {{ form_rest(form) }}
+            </div>
+        </div>
+        <div class="modal-footer">
+            <input type="hidden" name="isEmpty" value="">
+            <input class="btn btn-success" type="submit" value="{{ 'registration.submit'|trans }}">
+        </div>
+    </form>
+{% endblock fos_user_content %}

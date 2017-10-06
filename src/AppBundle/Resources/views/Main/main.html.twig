@@ -1,0 +1,137 @@
+{% extends "::base.html.twig" %}
+
+{% block fos_user_content %}
+    <div class="header">User Manager</div>
+    <div class="container users-info">
+    <ul class="users">
+        <h2>It's you:</h2>
+        <div class="row user" style="margin-left: 7px" data-id="{{ currentUser.id }}">
+            <div class="col-lg-5 user-info">
+                <div class="media">
+                    <a class="image-left clearfix" data-class="non-active">
+                        <img class="media-object dp img-circle dropdown-toggle" data-class="non-active" data-toggle="dropdown" src="{% if(currentUser.photoSrc)%}{{ currentUser.photoSrc }}{% else %} https://www.shareicon.net/download/2016/06/19/603895_prog_512x512.png{% endif %}" style="width: 100px;height:100px;">
+                        <ul class="dropdown-menu drop-menu">
+                            <li class="delete" data-class="non-active">Удалить</li>
+                            <li class="block" data-class="none-active">Заблокировать</li>
+                        </ul>
+                    </a>
+                        <span class="label label-info active">Active</span>
+                    {% if(currentUser.vkID) %}
+                        <img class="vk-icon" width="17px" src="{{ asset("icons/vk.png") }}">
+                    {% elseif(currentUser.twitterID) %}
+                        <img class="twitter-icon" width="17px" src="{{ asset("icons/twitter.png") }}">
+                    {% elseif(currentUser.facebookID) %}
+                        <img class="facebook-icon" width="17px" src="{{ asset("icons/facebook.png") }}">
+                    {% else %}
+                        <img class="symfony-icon" width="21px" src="{{ asset("icons/symfony_logo.png") }}">
+                    {% endif %}
+                    <div class="media-body">
+                        <h4 class="media-heading">{{ currentUser.username }} <small> Online</small></h4>
+                        <h5 style="color:gray">{% if(currentUser.vkID) or (currentUser.twitterID) or (currentUser.facebookID)%}
+                                ID: {% if(currentUser.vkID) %} {{ currentUser.vkID }} {% elseif(currentUser.twitterID) %} {{ currentUser.twitterID }} {% elseif(currentUser.facebookID) %}  {{ currentUser.facebookID }}{% endif %}
+                            <br>
+                                {% if(currentUser.sex)%} Sex:  {% if(currentUser.sex == 1) %} Male{% endif %}{% endif %}
+                            <br>
+                                {% if(currentUser.bDate) %}BirthDay: {{ currentUser.bDate }} {% endif %}
+                               {% else %}
+                                   <div class="email">{{ currentUser.email }}</div>
+                            {% endif %}
+                        </h5>
+                        <br>
+                        <hr style="margin:8px auto">
+                        <div class="label label-default">
+                            Last logon:{% if(currentUser.lastlogin) %} {{ currentUser.lastlogin|date('Y:m:d H:m:s') }} {% else %} never connect {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-default pull-right info" data-class="non-active"><p class="rotate-text">Logout</p></button>
+        </div>
+        <div class="row collapse" id="hide-block" data-toggle="collapse" aria-expanded="false">
+            <div class="delete-block">Delete secelted</div><div class="block-block">Block selected</div>
+        </div>
+        <hr>
+    {% for user in paginator %}
+        {% if(user.id != currentUser.id) %}
+        <div class="row user" data-id="{{ user.id }}" style="margin-left: 10px">
+            <div class="col-lg-5 user-info">
+                <div class="media">
+                    <a class="image-left clearfix">
+                            <img class="media-object dp img-circle dropdown-toggle" data-class="non-active" data-toggle="dropdown" src="{% if(user.photoSrc)%}{{ user.photoSrc }}{% else %} https://www.shareicon.net/download/2016/06/19/603895_prog_512x512.png{% endif %}" style="width: 100px;height:100px;">
+                            <ul class="dropdown-menu drop-menu">
+                                <li class="delete" data-class="non-active">Удалить</li>
+                                <li class="block" data-class="non-active">Заблокировать</li>
+                            </ul>
+
+                    </a>
+                    {% if(user.locked == false) %}
+                        <span class="label label-info active">Active</span>
+                    {% else %}
+                        <span class="label label-info banned">Banned</span>
+                    {% endif %}
+                    {% if(user.vkID) %}
+                        <img class="vk-icon" width="17px" src="{{ asset("icons/vk.png") }}">
+                    {% elseif(user.twitterID) %}
+                        <img class="twitter-icon" width="17px" src="{{ asset("icons/twitter.png") }}">
+                    {% elseif(user.facebookID) %}
+                        <img class="facebook-icon" width="17px" src="{{ asset("icons/facebook.png") }}">
+                    {% else %}
+                        <img class="symfony-icon" width="21px" src="{{ asset("icons/symfony_logo.png") }}">
+                    {% endif %}
+                    <div class="media-body">
+                        <h4 class="media-heading">{{ user.username }} <small> {% if(user.lastUpdate) %}
+                                 {%  if((now.timestamp - user.lastUpdate.timestamp)/60 < 15)%}
+                                     Online
+                                     {% else %}
+                                     Offline
+                                     {% endif %}
+                                    {% else %}
+                                    Offline
+                             {% endif %}
+                        </small></h4>
+                        <h5 style="color:gray">{% if(user.vkID) or (user.twitterID) or (user.facebookID)%}
+                                ID: {% if(user.vkID) %} {{ user.vkID }} {% elseif(user.twitterID) %} {{ user.twitterID }} {% elseif(user.facebookID) %}  {{ user.facebookID }}{% endif %}
+                                <br>
+                                 {% if(user.sex)%}Sex: {% if(user.sex == 1) %} Male{% endif %}{% endif %}
+                                <br>
+                                 {% if(user.bDate) %} BirthDay: {{ user.bDate }} {% endif %}
+                                {% else %}
+                                    <div class="email">{{ user.email }}</div>
+                            {% endif %}
+                        </h5>
+                        <hr style="margin:8px auto">
+                        <div class="label label-default">
+                            Last logon:{% if(user.lastlogin) %} {{ user.lastlogin|date('Y:m:d H:m:s') }} {% else %} never connect {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </ul>
+    </div>
+    <div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: black">
+                    <h2 class="modal-title" style="text-align: center;color:red;margin-top: 2px" id="error-modal-label">Error</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    You haven't access for this. You account was blocked or deleted. Redirecting to loading page...
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <img class="spinner" style="display: none" src="{{ asset("icons/Spinner.gif")}}"></img>
+    <div class="navigation">
+        {{ knp_pagination_render(paginator) }}
+    </div>
+    <div class="footer"></div>
+{% endblock %}

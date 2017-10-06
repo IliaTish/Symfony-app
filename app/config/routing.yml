@@ -1,3 +1,22 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+block_user:
+    path:     /api/block
+    defaults: { _controller: AppBundle:Api:blockUser }
+
+delete_user:
+    path: /api/delete
+    defaults: { _controller: AppBundle:Api:deleteUser}
+
+delete_selected_users:
+    path: /api/deleteSelected
+    defaults: { _controller: AppBundle:Api:deleteSelected}
+
+block_selected_users:
+    path: /api/blockSelected
+    defaults: { _controller: AppBundle:Api:blockSelected}

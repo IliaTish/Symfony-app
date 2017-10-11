@@ -20,3 +20,8 @@ delete_selected_users:
 block_selected_users:
     path: /api/blockSelected
     defaults: { _controller: AppBundle:Api:blockSelected}
+
+
+add_workspace:
+    path: /api/workspace
+    defaults: { _controller: AppBundle:Api:addWorkSpace}

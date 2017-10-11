@@ -19,7 +19,6 @@ class MainController extends Controller
         $paginator = $this->get('knp_paginator');
         $doctrine = $this->getDoctrine()->getManager();
 
-        //$users = $doctrine->getRepository(User::class)->findAll();
         $user = $this->getUser();
 
         $users = $doctrine->createQuery("SELECT u FROM AppBundle\Entity\User u WHERE u.id != ".$user->getId())->getResult();

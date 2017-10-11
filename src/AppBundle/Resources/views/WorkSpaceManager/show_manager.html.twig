@@ -1,0 +1,27 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:WorkSpaces:showList{% endblock %}
+
+{% block fos_user_content %}
+    <div class="header">User Manager</div>
+    <div style="min-height: 600px" class="container content">
+        <h3 class="row header-work">Add WorkSpace:</h3>
+        <div class="row" style="margin-top: 5px"><input style="margin-top: 5px; width: 80%; border-radius: 7px; outline: none;" class="workspace-create" data-id="{{ user.id }}"><button style="width:18%;background-color: black;color: white" class="btn btn-default pull-right add-workspace">Add WorkSpace</button></div>
+        <hr>
+        {% if(workspaces|length == 0) %}
+            None workspaces
+        {% else %}
+            <h3>WorkSpaces:</h3>
+            {% for workspace in workspaces %}
+                <div class="row workspace" data-id="{{ workspace.id }}">
+                    <b>{{ workspace.workspaceName }}</b>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="footer"></div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset("scripts/manager.js") }}"></script>
+{% endblock %}

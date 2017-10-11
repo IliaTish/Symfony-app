@@ -2,22 +2,18 @@
 $(document).ready(()=>{
     let selected = [];
     let currentID = $(".user").attr("data-id");
-
-
     $(".delete-block").click(()=>{
         let stringifyObject = JSON.stringify(selected);
         let dataObject = {
             selected: stringifyObject,
             id : currentID
         }
-        $(".spinner").css("display","block");
         $.ajax({
             url: "/api/deleteSelected",
             type: "POST",
             data: dataObject,
             success: (data)=>{
                 if(data.result){
-                $(".spinner").css("display","none");
                     if(selected.indexOf(currentID) == -1){
                         selected.forEach((item,i,arr)=>{
                             $('[data-id="' + item + '"]').remove();
@@ -32,11 +28,13 @@ $(document).ready(()=>{
                 else{
                     showError();
                 }
-            },
-            error: (data)=>{
-                $(".spinner").css("display","none");
             }
         });
+    })
+
+    $(".workspace-button").click((event)=>{
+        let id =$(event.target).attr("data-id");
+        window.location.href = "/workspacelist/"+id;
     })
 
     $(".info").click(()=>{
@@ -50,14 +48,12 @@ $(document).ready(()=>{
             selected: stringifyObject,
             id : currentID
         }
-        $(".spinner").css("display","block");
         $.ajax({
             url: "/api/blockSelected",
             type: "POST",
             data: dataObject,
             success: (data)=>{
             if(data.result){
-            $(".spinner").css("display","none");
             if(selected.indexOf(currentID) == -1){
                 selected.forEach((item,i,arr)=>{
                     $('[data-id="' + item + '"]').find(".active").replaceWith("<span class=\"label label-info banned\">Banned</span>");
@@ -75,9 +71,6 @@ $(document).ready(()=>{
         else{
             showError();
         }
-        },
-       error:(data)=>{
-            $(".spinner").css("display","none");
         }
         });
     })
@@ -91,13 +84,12 @@ $(document).ready(()=>{
             id: id,
             currentID:currentID
         }
-        $(".spinner").css("display","block");
+
         $.ajax({
             url:"/api/block",
             type:"POST",
             data:sendObject,
             success:(data)=>{
-                 $(".spinner").css("display","none");
                 if(data.result){
                     $(element).find(".active").replaceWith("<span class=\"label label-info banned\">Banned</span>");
                     if(currentID == id){
@@ -109,9 +101,12 @@ $(document).ready(()=>{
                 }
             },
             error:(data)=>{
-                $(".spinner").css("display","none");
             }
         })
+    })
+
+    $(".workspace-manager").click(()=>{
+        window.location.href = "/spacemanager";
     })
 
     function showError(){
@@ -127,13 +122,12 @@ $(document).ready(()=>{
             id:id,
             currentID: currentID
         }
-        $(".spinner").css("display","block");
         $.ajax({
             url: "/api/delete",
             type: "POST",
             data:sendObject,
             success: (data)=>{
-            $(".spinner").css("display","none");
+            $(".cssload-preloader").css("display","none");
                 if(data.result){
                     if(currentID == id){
                         $(element).remove();
@@ -149,7 +143,6 @@ $(document).ready(()=>{
                 }
             },
             error:(data)=>{
-                $(".spinner").css("display","none");
             }
         })
     })

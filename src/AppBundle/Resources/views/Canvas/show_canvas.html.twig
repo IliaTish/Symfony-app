@@ -1,0 +1,24 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Canvas:showCanvas{% endblock %}
+{% block fos_user_content %}
+    <div class="col-md-12 canvas-wrapper">
+<canvas class="canvas" data-id="{{ workspace_id }}"></canvas>
+        <hr>
+        <div class="color-red"></div>
+        <div class="color-black"></div>
+        <div class="color-green"></div>
+        <div class="color-blue"></div>
+        <div class="color-bluesky"></div>
+        <img src="{{ asset("icons/eraser.png") }}" width="40px" class="eraser pull-right"></img>
+        <img src="{{ asset("icons/pen.png") }}" width="40px" class="pen pull-right selected-tool" style="margin-right: 20px">
+        <img src="{{ asset("icons/text.png") }}" width="40px" class="text pull-right" style="margin-right: 20px">
+    </div><div data-user="{{ user.username }}" class="chat">
+    <div style="text-align: center" class="chat-name">Messenger</div>
+    <div class="chat-content"></div>
+    <div class="chat-input"><input class="message-input"><button class="btn btn-default send-button" style="float: right">Send</button></div>
+</div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset("scripts/canvas.js") }}"></script>
+{% endblock %}

@@ -132,6 +132,11 @@
     left:40%;
 }
 
+.canvas{
+    width:50%;
+}
+
+
 .media-body{
     padding-left: 10px;
 }
@@ -147,6 +152,97 @@
 .image-left{
     position: relative;
     float: left;
+}
+
+.chat{
+    position: relative;
+    float:right;
+    margin-top: 10px;
+    height: 100%;
+    min-height: 600px;
+    width: 450px;
+}
+
+
+.selected-tool{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.chat-input{
+    padding: 5px;
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+}
+
+.message{
+    padding:5px;
+}
+
+.chat{
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+
+
+.chat-content{
+    overflow: auto;
+    height: 500px;
+}
+
+.send-button{
+    color: white;
+    background-color: green;
+}
+
+.send-button:hover{
+    background-color: black;
+    color: white;
+}
+
+.message-input{
+    border: 1px solid black;
+    width: 78%;
+    height: 34px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.message-input:focus{
+    border: 1px solid deepskyblue;
+}
+
+.chat-name{
+    font-size:35px;
+    color: white;
+    background-color: black;
+    height: 50px;
+}
+
+.canvas-wrapper{
+    position: relative;
+    margin: 10px;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+    width:1000px;
+    min-height: 600px;
+    margin-left: 5px;
+    border-radius: 10px;
+}
+
+body{
+    overflow: scroll;
+}
+
+.canvas{
+    min-height: 475px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.send-button{
+    width: 20%;
 }
 
 .block-block{
@@ -183,10 +279,105 @@
     box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
 }
 
+.user-info{
+    min-height: ;
+}
+
 .clearfix::after {
     content: "";
     display: table;
     clear: both;
+}
+
+.media, .media-body{
+    overflow: visible;
+}
+
+.workspace{
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px;
+    min-height: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+
+.workspace:hover{
+    background-color: deepskyblue;
+}
+
+.workspace-manager{
+    cursor: pointer;
+}
+
+.workspace-manager:hover{
+    background-color: black;
+    color:white;
+}
+
+.color-black,.color-red,.color-green,.color-blue,.color-bluesky{
+    float: left;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-bottom:5px;
+    border: 2px solid black;
+    width: 40px;
+    height: 40px;
+}
+
+.selected-color{
+    width: 50px;
+    height: 50px;
+
+}
+
+
+.color-selected{
+    width: 50px;
+    height: 50px;
+}
+
+.text-input{
+    background-color: transparent;
+    outline: none;
+    overflow: hidden;
+    position: absolute;
+    z-index: 100000;
+    width: 1px;
+    height: 1px;
+    border: 1px solid black;
+}
+
+.workspace-button{
+    cursor: pointer;
+}
+
+.workspace-button:hover{
+    background-color: black;
+    color:white;
+}
+
+.color-red{
+    background-color: red;
+}
+
+.color-bluesky{
+    background-color: deepskyblue;
+}
+
+.color-blue{
+    background-color: blue;
+}
+
+.color-green{
+    background-color: green;
+}
+
+.color-black{
+    background-color: black;
+    border: 2px solid gray;
 }
 
 .media
@@ -314,7 +505,7 @@
     .rotate-text{
         transform: none;
     }
-    
+
 }
 
 

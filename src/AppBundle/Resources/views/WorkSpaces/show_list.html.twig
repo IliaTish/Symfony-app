@@ -1,0 +1,20 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:WorkSpaces:showList{% endblock %}
+
+{% block fos_user_content %}
+    <div class="header">User Manager</div>
+    <div style="min-height: 600px" class="container content">
+        {% if(workspaces|length == 0) %}
+            None workspaces
+        {% else %}
+            <h1 style="text-align: center">WorkSpaces:</h1>
+            {% for workspace in workspaces %}
+                <div class="row workspace">
+                    <a href="{{ path('workspace_show', {'id':workspace.id}) }}" class="workspace-id" style="text-align: center; font-size: 20px" data-id="{{ workspace.id }}">{{ workspace.workspaceName }}</a>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="footer"></div>
+{% endblock %}

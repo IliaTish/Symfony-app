@@ -11,8 +11,9 @@
                     <a class="image-left clearfix" data-class="non-active">
                         <img class="media-object dp img-circle dropdown-toggle" data-class="non-active" data-toggle="dropdown" src="{% if(currentUser.photoSrc)%}{{ currentUser.photoSrc }}{% else %} https://www.shareicon.net/download/2016/06/19/603895_prog_512x512.png{% endif %}" style="width: 100px;height:100px;">
                         <ul class="dropdown-menu drop-menu">
-                            <li class="delete" data-class="non-active">Удалить</li>
-                            <li class="block" data-class="none-active">Заблокировать</li>
+                            <li class="delete" data-class="non-active">Delete</li>
+                            <li class="block" data-class="non-active">Block</li>
+                            <li class="workspace-manager" data-class="non-active">WorkSpace Manager</li>
                         </ul>
                     </a>
                         <span class="label label-info active">Active</span>
@@ -59,8 +60,9 @@
                     <a class="image-left clearfix">
                             <img class="media-object dp img-circle dropdown-toggle" data-class="non-active" data-toggle="dropdown" src="{% if(user.photoSrc)%}{{ user.photoSrc }}{% else %} https://www.shareicon.net/download/2016/06/19/603895_prog_512x512.png{% endif %}" style="width: 100px;height:100px;">
                             <ul class="dropdown-menu drop-menu">
-                                <li class="delete" data-class="non-active">Удалить</li>
-                                <li class="block" data-class="non-active">Заблокировать</li>
+                                <li class="delete" data-class="non-active">Delete</li>
+                                <li class="block" data-class="non-active">Block</li>
+                                <li class="workspace-button" data-id="{{ user.id }}" data-class="non-active">Open WorkSpace</li>
                             </ul>
 
                     </a>

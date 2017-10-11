@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
+use AppBundle\Entity\WorkSpace;
 use Buzz\Message\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -38,6 +39,17 @@ class ApiController extends Controller
         return new JsonResponse(array("result"=>true));
     }
 
+    public function addWorkSpaceAction(Request $request){
+        $id = $request->get("id");
+        $workSpaceName = $request->get("workSpaceName");
+        $workSpace = new WorkSpace();
+        $workSpace->setUserId($id);
+        $workSpace->setWorkSpaceName($workSpaceName);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($workSpace);
+        $em->flush();
+        return new JsonResponse(array("result"=>true,"id"=>$workSpace->getId()));
+    }
 
     public function blockSelectedAction(Request $request){
         $jsonData = $request->get("selected");
